@@ -6,17 +6,17 @@ from email.mime.text import MIMEText
 from email.mime.image import MIMEImage
 import smtplib
 
-meu_email = 'SEUEMAIL@GMAIL.COM'
-minha_senha = 'SUASENHA'
+meu_email = 'jsgleisson@gmail.com'
+minha_senha = 'Salvadorssa2023*'
 
-with open('template.html', 'r') as html:
+with open('enviaemail/template.html', 'r') as html:
     template = Template(html.read())
     data_atual = datetime.now().strftime('%d/%m/%Y')
     corpo_msg = template.substitute(nome='Luiz Otávio', data=data_atual)
 
 msg = MIMEMultipart()
-msg['from'] = 'SEU NOME'
-msg['to'] = 'EMAILDOCLIENTE@GMAIL.COM'  # Cliente
+msg['from'] = 'Gleisson'
+msg['to'] = 'glfx20@gmail.com'  # Cliente
 msg['subject'] = 'ASSUNTO DO E-MAIL'
 
 corpo = MIMEText(corpo_msg, 'html')
